@@ -1,0 +1,29 @@
+version: '3'
+
+networks:
+  network:
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+#    volumes:
+#      - ./db:/var/lib/postgresql/data
+    tty: true
+    networks:
+      - network
+
+  web:
+    build:
+        context: ./docker-rails
+    volumes:
+      - ./myapp:/myapp
+    ports:
+      - "3000:3000"
+    tty: true
+    networks:
+      - network
+    depends_on:
+      - db
