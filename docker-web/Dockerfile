@@ -12,12 +12,12 @@ RUN apt-get install -y yarn
 
 RUN apt-get install -y postgresql-client
 
-RUN mkdir /myapp
+RUN mkdir /web-app-api
 
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+WORKDIR /web-app-api
+COPY Gemfile /web-app-api/Gemfile
+COPY Gemfile.lock /web-app-api/Gemfile.lock
 
 RUN bundle install
 
-COPY . /myapp
+COPY . /web-app-api

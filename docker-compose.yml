@@ -1,25 +1,31 @@
 version: '3'
 
+volumes:
+  db_data:
+
 networks:
   network:
 
 services:
   db:
-    image: postgres
+    build:
+      context: docker-db
     restart: always
     environment:
       POSTGRES_PASSWORD: postgres
-#    volumes:
-#      - ./db:/var/lib/postgresql/data
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     tty: true
     networks:
       - network
 
   web:
     build:
-        context: ./docker-rails
+      context: docker-web
     volumes:
-      - ./myapp:/myapp
+      - ./web-app-api:/web-app-api
     ports:
       - "3000:3000"
     tty: true
