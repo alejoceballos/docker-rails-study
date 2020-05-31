@@ -14,7 +14,7 @@ rails server -b 0.0.0.0
 ```
 or
 ```shell script
-docker exec <container> 'rails server -b 0.0.0.0'
+docker exec <container> rails server -b 0.0.0.0
 ```
 
 Checking all docker volumes 
