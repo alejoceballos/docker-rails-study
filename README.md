@@ -36,6 +36,10 @@ docker volume rm $(docker volume ls -q)
 docker network rm $(docker network ls -q)
 ```
 
+C:\Users\alejo\AppData\Local\JetBrains\IntelliJIdea2020.1\ruby_stubs\-706067037\usr\local\bundle\specifications
+C:\Users\alejo\AppData\Local\JetBrains\IntelliJIdea2020.1\ruby_stubs\-706067037\usr\local\bundle\gems
+C:\Users\alejo\AppData\Local\JetBrains\IntelliJIdea2020.1\ruby_stubs\-1249202311\usr\local\bundle\specifications
+C:\Users\alejo\AppData\Local\JetBrains\IntelliJIdea2020.1\ruby_stubs\-1249202311\usr\local\bundle\gems
 
 
 

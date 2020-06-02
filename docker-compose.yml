@@ -24,6 +24,8 @@ services:
   web:
     build:
       context: docker-web
+    environment:
+      - BUNDLE_PATH=/web-app-api/vendor
     volumes:
       - ./web-app-api:/web-app-api
     ports:
