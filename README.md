@@ -42,10 +42,14 @@ C:\Users\alejo\AppData\Local\JetBrains\IntelliJIdea2020.1\ruby_stubs\-1249202311
 C:\Users\alejo\AppData\Local\JetBrains\IntelliJIdea2020.1\ruby_stubs\-1249202311\usr\local\bundle\gems
 
 
+#### New Project
 
 ```shell script
 rails new . --force --no-deps --database=postgresql
 ```
+
+#### Update DB config
+
 ```yaml
 default: &default
   adapter: postgresql
@@ -57,11 +61,53 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 ```
+
+#### Generate new complete CRUD
 ```shell script
 rails generate scaffold Article title:string description:text
 ```
+or
+
+1. Generate Migration File
 ```shell script
-rake db:create
+rails generate migration whatever_change_i_want
+```
+2. Edit the migration template file
+```ruby
+class WhateverChangeIWant < ActiveRecord::Migration[6.0]
+  def change
+    ...
+  end
+end
+```
+`...` can be:
+```
+    create_table :table_name do |t|
+      t.data_type :column_name
+      .
+      .
+      .
+    end
+```
+or
+```
+    add_column :table_name, column_name, :data_type
+    ...
+```
+or
+```ruby
+    ?
+```
+
+Note:
+- Class name: Capitalized, singular and CamelCase
+- File name: Singular, snake_case and lowercase
+- Table name: Plural, snake_case and lowercase
+
+
+#### Create the database
+```shell script
+rake db:create # also check: db:rollback & db:
 ```
 ```shell script
 rails db:migrate
