@@ -2,3 +2,29 @@
 *.iml
 
 web-app-api/vendor
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+web-app-ui/dist/
+web-app-ui/tmp/
+
+# dependencies
+web-app-ui/bower_components/
+web-app-ui/node_modules/
+
+# misc
+web-app-ui/.env*
+web-app-ui/.pnp*
+web-app-ui/.sass-cache
+web-app-ui/connect.lock
+web-app-ui/coverage/
+web-app-ui/libpeerconnection.log
+web-app-ui/npm-debug.log*
+web-app-ui/testem.log
+web-app-ui/yarn-error.log
+
+# ember-try
+web-app-ui/.node_modules.ember-try/
+web-app-ui/bower.json.ember-try
+web-app-ui/package.json.ember-try
