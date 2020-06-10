@@ -51,6 +51,7 @@ services:
       - ui_usr_lib_node_modules:/usr/lib/node_modules/
     ports:
       - "4200:4200"
+      - "7357:7357"
     tty: true
     networks:
       - app_network

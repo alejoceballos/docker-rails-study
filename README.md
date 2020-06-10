@@ -8,6 +8,11 @@ Checking all docker volumes
 docker volume inspect $(docker volume ls -q)
 ```
 
+Stop docker containers:
+```shell script
+docker stop $(docker ps -aq)
+```
+
 Completely wipe out your docker doing:
 ```shell script
 docker rm -f $(docker ps -aq)
